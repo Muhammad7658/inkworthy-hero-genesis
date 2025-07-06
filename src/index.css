@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -100,6 +101,29 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-sand-50 text-indigo-900 font-inter;
   }
+
+  .glassmorphism {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+}
+
+/* Custom gradient backgrounds */
+.hero-gradient {
+  background: linear-gradient(135deg, #fdfcfa 0%, #f9f7f4 50%, #f4f1eb 100%);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #1A2A4F 0%, #2c3e50 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gold-gradient {
+  background: linear-gradient(135deg, #D4AF37 0%, #b8941f 100%);
 }
