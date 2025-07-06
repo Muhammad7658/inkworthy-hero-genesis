@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Star } from 'lucide-react';
@@ -69,21 +68,12 @@ const HeroSection = () => {
 
           {/* Right column - Visual */}
           <div className="relative">
-            <div className="relative bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/20 shadow-2xl animate-float">
-              {/* Typewriter illustration placeholder */}
-              <div className="aspect-square bg-gradient-to-br from-indigo-900/10 to-gold-500/10 rounded-2xl flex items-center justify-center">
-                <div className="text-center space-y-4">
-                  <div className="w-24 h-24 mx-auto bg-indigo-900/20 rounded-full flex items-center justify-center">
-                    <div className="w-12 h-12 bg-gold-500/30 rounded-lg"></div>
-                  </div>
-                  <div className="space-y-2">
-                    <div className="h-2 bg-indigo-900/20 rounded w-3/4 mx-auto"></div>
-                    <div className="h-2 bg-indigo-900/20 rounded w-1/2 mx-auto"></div>
-                    <div className="h-2 bg-gold-500/30 rounded w-2/3 mx-auto"></div>
-                  </div>
-                </div>
-              </div>
-              
+            <div className="relative bg-white/10 backdrop-blur-sm rounded-3xl p-4 border border-white/20 shadow-2xl animate-float">
+              <img
+                src="/images/hero.jpeg" // Replace this with your actual image path or imported asset
+                alt="Premium ghostwriting for thought leaders"
+                className="w-full h-auto rounded-2xl object-cover"
+              />
               {/* Floating elements */}
               <div className="absolute -top-4 -left-4 w-8 h-8 bg-gold-500 rounded-full opacity-60 animate-pulse"></div>
               <div className="absolute -bottom-4 -right-4 w-6 h-6 bg-indigo-900 rounded-full opacity-40 animate-pulse delay-1000"></div>
