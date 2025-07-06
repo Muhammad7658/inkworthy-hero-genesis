@@ -9,7 +9,7 @@ const HeroSection = () => {
   ];
 
   return (
-    <section className="relative min-h-screen flex items-center hero-gradient overflow-hidden">
+    <section className="relative min-h-screen flex items-center hero-gradient overflow-hidden pt-24 md:pt-28">
       {/* Background decorative elements */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-20 left-10 w-72 h-72 rounded-full bg-indigo-900 blur-3xl"></div>
@@ -22,14 +22,14 @@ const HeroSection = () => {
           <div className="space-y-8 animate-fade-in">
             {/* Main Headline */}
             <div className="space-y-4">
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-playfair font-bold leading-tight">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-playfair font-bold leading-tight">
                 <span className="text-gradient">Where Words</span>
                 <br />
                 <span className="text-indigo-900">Build Legacies.</span>
               </h1>
               
               {/* Subheading */}
-              <p className="text-xl md:text-2xl text-indigo-900/80 font-inter font-light leading-relaxed max-w-2xl">
+              <p className="text-lg md:text-xl lg:text-2xl text-indigo-900/80 font-inter font-light leading-relaxed max-w-2xl">
                 Premier ghostwriting and content marketing services for thought leaders, consultants, 
                 and service-based brands ready to be unforgettable.
               </p>
