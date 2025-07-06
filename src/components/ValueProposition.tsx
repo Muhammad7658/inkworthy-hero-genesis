@@ -59,7 +59,7 @@ const ValueProposition = () => {
           <div className="relative">
             <div className="relative bg-white/10 backdrop-blur-sm rounded-3xl p-4 border border-indigo-900/10 shadow-xl animate-float">
               <img
-                src="/images/second.jpeg" // Replace with actual image path or imported image
+                src="/images/scnd.webp" // Replace with actual image path or imported image
                 alt="Content strategy that builds authority"
                 className="w-full h-auto rounded-2xl object-cover"
               />
