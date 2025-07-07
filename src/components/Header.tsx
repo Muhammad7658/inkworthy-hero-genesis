@@ -26,7 +26,7 @@ const Header = () => {
 
   return (
     <header 
-      className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
           ? 'glassmorphism shadow-lg' 
           : 'bg-transparent'
@@ -68,50 +68,37 @@ const Header = () => {
 
             {/* Mobile menu button */}
             <button
-              className="lg:hidden text-indigo-900 hover:text-gold-500 transition-colors duration-200 p-1 z-[110] relative"
+              className="lg:hidden text-indigo-900 hover:text-gold-500 transition-colors duration-200 p-1"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
               {isMobileMenuOpen ? <X className="w-5 h-5 sm:w-6 sm:h-6" /> : <Menu className="w-5 h-5 sm:w-6 sm:h-6" />}
             </button>
           </div>
         </div>
-      </div>
 
-      {/* Mobile Navigation */}
-      {isMobileMenuOpen && (
-        <div className="lg:hidden fixed left-0 right-0 bg-white border-t border-indigo-900/10 shadow-lg z-[95]" style={{ top: '100%' }}>
-          <nav className="container mx-auto px-4 sm:px-6 py-6">
-            <div className="space-y-1">
-              {navigationItems.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className="block py-3 px-2 text-indigo-900 hover:text-gold-500 hover:bg-gold-50 transition-all duration-200 font-medium text-base rounded-md"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {item.name}
-                </a>
-              ))}
-            </div>
-            <div className="pt-6 mt-6 border-t border-indigo-900/10">
-              <Button 
-                className="w-full gold-gradient text-white hover:opacity-90 transition-opacity duration-200 font-medium py-3 rounded-full text-base"
+        {/* Mobile Navigation */}
+        <div className={`lg:hidden transition-all duration-300 overflow-hidden ${
+          isMobileMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+        }`}>
+          <nav className="pt-4 pb-2 border-t border-indigo-900/10 mt-4">
+            {navigationItems.map((item) => (
+              <a
+                key={item.name}
+                href={item.href}
+                className="block py-3 text-indigo-900 hover:text-gold-500 transition-colors duration-200 font-medium"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Start My Free Strategy Session
-              </Button>
-            </div>
+                {item.name}
+              </a>
+            ))}
+            <Button 
+              className="w-full mt-4 gold-gradient text-white hover:opacity-90 transition-opacity duration-200 font-medium py-3 rounded-full text-sm sm:text-base"
+            >
+              Start My Free Strategy Session
+            </Button>
           </nav>
         </div>
-      )}
-
-      {/* Overlay for mobile menu */}
-      {isMobileMenuOpen && (
-        <div 
-          className="fixed inset-0 bg-black/20 z-[80] lg:hidden"
-          onClick={() => setIsMobileMenuOpen(false)}
-        />
-      )}
+      </div>
     </header>
   );
 };
