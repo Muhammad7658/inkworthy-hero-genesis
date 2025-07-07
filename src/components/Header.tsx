@@ -77,7 +77,7 @@ const Header = () => {
         </div>
 
         {/* Mobile Navigation */}
-        <div className={`lg:hidden fixed left-0 right-0 top-full bg-white/95 backdrop-blur-md border-t border-indigo-900/10 shadow-lg transition-all duration-300 z-[90] ${
+        <div className={`lg:hidden fixed left-0 right-0 top-full bg-white border-t border-indigo-900/10 shadow-lg transition-all duration-300 z-[90] ${
           isMobileMenuOpen ? 'max-h-screen opacity-100 visible' : 'max-h-0 opacity-0 invisible overflow-hidden'
         }`}>
           <nav className="container mx-auto px-4 sm:px-6 py-4">
@@ -106,7 +106,7 @@ const Header = () => {
       {/* Overlay for mobile menu */}
       {isMobileMenuOpen && (
         <div 
-          className="fixed inset-0 bg-black/30 backdrop-blur-sm z-[80] lg:hidden"
+          className="fixed inset-0 bg-black/20 z-[80] lg:hidden"
           onClick={() => setIsMobileMenuOpen(false)}
         />
       )}
