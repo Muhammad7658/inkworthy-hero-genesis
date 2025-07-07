@@ -26,7 +26,7 @@ const Header = () => {
 
   return (
     <header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 ${
         isScrolled 
           ? 'glassmorphism shadow-lg' 
           : 'bg-transparent'
@@ -68,7 +68,7 @@ const Header = () => {
 
             {/* Mobile menu button */}
             <button
-              className="lg:hidden text-indigo-900 hover:text-gold-500 transition-colors duration-200 p-1"
+              className="lg:hidden text-indigo-900 hover:text-gold-500 transition-colors duration-200 p-1 z-[110]"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
               {isMobileMenuOpen ? <X className="w-5 h-5 sm:w-6 sm:h-6" /> : <Menu className="w-5 h-5 sm:w-6 sm:h-6" />}
@@ -77,28 +77,39 @@ const Header = () => {
         </div>
 
         {/* Mobile Navigation */}
-        <div className={`lg:hidden transition-all duration-300 overflow-hidden ${
-          isMobileMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+        <div className={`lg:hidden fixed left-0 right-0 top-full bg-white/95 backdrop-blur-md border-t border-indigo-900/10 shadow-lg transition-all duration-300 z-[90] ${
+          isMobileMenuOpen ? 'max-h-screen opacity-100 visible' : 'max-h-0 opacity-0 invisible overflow-hidden'
         }`}>
-          <nav className="pt-4 pb-2 border-t border-indigo-900/10 mt-4">
+          <nav className="container mx-auto px-4 sm:px-6 py-4">
             {navigationItems.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
-                className="block py-3 text-indigo-900 hover:text-gold-500 transition-colors duration-200 font-medium"
+                className="block py-3 text-indigo-900 hover:text-gold-500 transition-colors duration-200 font-medium border-b border-indigo-900/5 last:border-b-0"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {item.name}
               </a>
             ))}
-            <Button 
-              className="w-full mt-4 gold-gradient text-white hover:opacity-90 transition-opacity duration-200 font-medium py-3 rounded-full text-sm sm:text-base"
-            >
-              Start My Free Strategy Session
-            </Button>
+            <div className="pt-4">
+              <Button 
+                className="w-full gold-gradient text-white hover:opacity-90 transition-opacity duration-200 font-medium py-3 rounded-full text-sm sm:text-base"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Start My Free Strategy Session
+              </Button>
+            </div>
           </nav>
         </div>
       </div>
+
+      {/* Overlay for mobile menu */}
+      {isMobileMenuOpen && (
+        <div 
+          className="fixed inset-0 bg-black/30 backdrop-blur-sm z-[80] lg:hidden"
+          onClick={() => setIsMobileMenuOpen(false)}
+        />
+      )}
     </header>
   );
 };
